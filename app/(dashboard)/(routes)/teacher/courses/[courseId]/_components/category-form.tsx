@@ -1,5 +1,7 @@
 "use client";
 
+// npm install cmdk@0.2.1 to avoid breaking the app
+
 import * as z from "zod";
 import axios from "axios";
 import { zodResolver } from "@hookform/resolvers/zod";
