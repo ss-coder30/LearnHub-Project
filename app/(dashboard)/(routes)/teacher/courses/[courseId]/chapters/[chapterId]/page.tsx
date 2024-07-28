@@ -9,7 +9,7 @@ import { IconBadge } from "@/components/icon-badge";
 import { ChapterTitleForm } from "./_components/chapter-title-form";
 import { ChapterDescriptionForm } from "./_components/chapter-description-form";
 import { ChapterAccessForm } from "./_components/chapter-access-form";
-// import { ChapterVideoForm } from "./_components/chapter-video-form";
+import { ChapterVideoForm } from "./_components/chapter-video-form";
 // import { Banner } from "@/components/banner";
 // import { ChapterActions } from "./_components/chatper-actions";
 
@@ -118,11 +118,11 @@ const ChapterIdPage: React.FC<ChapterIdPageProps> = async ({ params }) => {
               <IconBadge icon={Video} />
               <h2 className="text-xl font-medium">Add a video</h2>
             </div>
-            {/* <ChapterVideoForm
+            <ChapterVideoForm
               initialData={chapter}
               courseId={params.courseId}
               chapterId={params.chapterId}
-            /> */}
+            />
           </div>
         </div>
       </div>

@@ -1,7 +1,12 @@
 import { NextResponse } from "next/server";
 import { auth } from "@clerk/nextjs";
 import { db } from "@/lib/db";
+import Mux from "@mux/mux-node";
 
+const { Video } = new Mux(
+  process.env.MUX_TOKEN_ID!,
+  process.env.MUX_TOKEN_SECRET!
+);
 export async function PATCH(
   req: Request,
   { params }: { params: { courseId: string; chapterId: string } }
@@ -35,46 +40,46 @@ export async function PATCH(
       },
     });
 
-    // if (values.videoUrl) {
-    //   const existingMuxData = await db.muxData.findFirst({
-    //     where: {
-    //       chapterId: params.chapterId,
-    //     },
-    //   });
+    if (values.videoUrl) {
+      const existingMuxData = await db.muxData.findFirst({
+        where: {
+          chapterId: params.chapterId,
+        },
+      });
 
-    //   if (existingMuxData) {
-    //     try {
-    //       await Video.Assets.del(existingMuxData.assetId);
-    //     } catch (error) {
-    //       console.log("[Mux Asset Delete]", error);
-    //     }
-    //     await db.muxData.delete({
-    //       where: {
-    //         id: existingMuxData.id,
-    //       },
-    //     });
-    //   }
+      if (existingMuxData) {
+        try {
+          await Video.Assets.del(existingMuxData.assetId);
+        } catch (error) {
+          console.log("[Mux Asset Delete]", error);
+        }
+        await db.muxData.delete({
+          where: {
+            id: existingMuxData.id,
+          },
+        });
+      }
 
-    //   try {
-    //     const asset = await Video.Assets.create({
-    //       input: values.videoUrl,
-    //       playback_policy: "public",
-    //       test: false,
-    //     });
+      try {
+        const asset = await Video.Assets.create({
+          input: values.videoUrl,
+          playback_policy: "public",
+          test: false,
+        });
 
-    //     if (asset) {
-    //       await db.muxData.create({
-    //         data: {
-    //           chapterId: params.chapterId,
-    //           assetId: asset.id,
-    //           playbackId: asset.playback_ids?.[0]?.id,
-    //         },
-    //       });
-    //     }
-    //   } catch (error) {
-    //     console.log("[Mux Asset Create]", error);
-    //   }
-    // }
+        if (asset) {
+          await db.muxData.create({
+            data: {
+              chapterId: params.chapterId,
+              assetId: asset.id,
+              playbackId: asset.playback_ids?.[0]?.id,
+            },
+          });
+        }
+      } catch (error) {
+        console.log("[Mux Asset Create]", error);
+      }
+    }
 
     return NextResponse.json(chapter);
   } catch (error) {

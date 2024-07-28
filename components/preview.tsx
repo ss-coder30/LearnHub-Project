@@ -20,7 +20,7 @@ export const Preview = ({ value }: PreviewProps) => {
   );
 
   return (
-    <div className="bg-white dark:bg-slate-700 rounded-md text-slate-200">
+    <div className="bg-white dark:bg-slate-800 rounded-md text-slate-200">
       <ReactQuill theme="bubble" value={value} readOnly={true} />
     </div>
   );
