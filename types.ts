@@ -1,4 +1,4 @@
-import { Category, Course, Profile } from "@prisma/client";
+import { Category, Course } from "@prisma/client";
 
 export type CourseWithProgressWithCategory = Course & {
   category: Category | null;

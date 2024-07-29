@@ -11,7 +11,7 @@ export const NavbarRoutes = () => {
   const pathname = usePathname();
 
   const isTeacherPage = pathname?.startsWith("/teacher") || false;
-  const isPlayerPage = pathname?.includes("/chapter") || false;
+  const isCoursePage = pathname?.includes("/courses") || false;
   const isSearchPage = pathname === "/search";
 
   return (
@@ -22,7 +22,7 @@ export const NavbarRoutes = () => {
         </div>
       )}
       <div className="flex gap-x-2 ml-auto">
-        {isTeacherPage || isPlayerPage ? (
+        {isTeacherPage || isCoursePage ? (
           <Link href="/">
             <Button className="sm bg-sky-100" variant="ghost">
               <LogOut className="h-4 w-4 mr-2 " />
