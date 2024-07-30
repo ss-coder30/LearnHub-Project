@@ -53,8 +53,7 @@ const CreatePage = () => {
       <div>
         <h1 className="text-2xl">Name Your Course</h1>
         <p className="text-sm text-slate-600">
-          What would you like to name your course? You can change
-          it later
+          What would you like to name your course? You can change it later.
         </p>
 
         <Form {...form}>
@@ -71,7 +70,7 @@ const CreatePage = () => {
                   <FormControl>
                     <Input
                       disabled={isSubmitting}
-                      placeholder="e.g. 'Advanced Web Development'"
+                      placeholder="e.g. Advanced Web Development"
                       {...field}
                     />
                   </FormControl>
