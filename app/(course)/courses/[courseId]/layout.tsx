@@ -70,9 +70,3 @@ const CourseLayout = async ({
 };
 
 export default CourseLayout;
-
-{/* 
-      <div>
-        
-      </div>
-       */}

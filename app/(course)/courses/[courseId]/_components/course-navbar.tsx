@@ -3,7 +3,7 @@ import { Chapter, Course, UserProgress } from "@prisma/client";
 import { NavbarRoutes } from "../../../../../components/navbar-routes";
 
 import { CourseMobileSidebar } from "./course-mobile-sidebar";
-import { SafeProfile } from "../../../../../types";
+// import { SafeProfile } from "../../../../../types";
 import React from "react";
 
 interface CourseNavbarProps {
@@ -13,7 +13,7 @@ interface CourseNavbarProps {
     })[];
   };
   progressCount: number;
-  currentProfile?: SafeProfile | null;
+  // currentProfile?: SafeProfile | null;
 }
 
 export const CourseNavbar = ({
