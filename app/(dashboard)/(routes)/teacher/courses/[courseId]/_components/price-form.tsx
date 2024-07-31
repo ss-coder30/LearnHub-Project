@@ -66,8 +66,8 @@ export default function PriceForm({ initialData, courseId }: PriceFormProps) {
         Course price
         <Button
           onClick={toggleEdit}
-          variant="ghost"
-          className="border border-slate-400 hover:border-none bg-sky-100"
+          variant="darkBlueButton"
+          // className="border border-slate-400 hover:border-none bg-sky-100"
         >
           {isEditing ? (
             <>Cancel</>
@@ -114,7 +114,11 @@ export default function PriceForm({ initialData, courseId }: PriceFormProps) {
               )}
             />
             <div className="flex items-center gap-x-2">
-              <Button disabled={!isValid || isSubmitting} type="submit">
+              <Button
+                disabled={!isValid || isSubmitting}
+                type="submit"
+                className="bg-green-300"
+              >
                 Save
               </Button>
             </div>

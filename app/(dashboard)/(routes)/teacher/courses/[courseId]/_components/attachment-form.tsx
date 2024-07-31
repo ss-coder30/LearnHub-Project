@@ -73,8 +73,8 @@ export const AttachmentForm = ({
         Course attachments
         <Button
           onClick={toggleEdit}
-          variant="ghost"
-          className="border border-slate-400 hover:border-none bg-sky-100"
+          variant="darkBlueButton"
+          // className="border border-slate-400 hover:border-none bg-sky-100"
         >
           {isEditing && <>Cancel</>}
 

@@ -68,9 +68,9 @@ export function DataTable<TData, TValue>({
         />
         <Link href="/teacher/create">
           <Button
-            variant="outline"
+            variant="darkBlueButton"
             size="sm"
-            className=" bg-[#041422] text-slate-300"
+            // className=" bg-[#03346E] text-slate-300"
           >
             <PlusCircle className="h-4 w-4 mr-2 " />
             New Course

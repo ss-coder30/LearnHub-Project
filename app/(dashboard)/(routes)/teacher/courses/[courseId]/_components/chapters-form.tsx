@@ -97,8 +97,8 @@ export const ChaptersForm = ({
         Course chapters
         <Button
           onClick={toggleCreating}
-          variant="ghost"
-          className="border border-slate-400 hover:border-none bg-sky-100"
+          variant="darkBlueButton"
+          // className="border border-slate-400 hover:border-none bg-sky-100"
         >
           {isCreating && <>Cancel</>}
           {!isCreating && (
@@ -132,7 +132,7 @@ export const ChaptersForm = ({
                 </FormItem>
               )}
             />
-            <Button disabled={!isValid || isSubmitting} type="submit">
+            <Button disabled={!isValid || isSubmitting} type="submit" className="bg-green-300">
               Create
             </Button>
           </form>

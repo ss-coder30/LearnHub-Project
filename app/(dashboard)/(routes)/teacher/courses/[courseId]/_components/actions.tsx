@@ -58,13 +58,13 @@ export const Actions = ({ disabled, courseId, isPublished }: ActionsProps) => {
       <Button
         onClick={onClick}
         disabled={disabled || isLoading}
-        variant="outline"
+        variant="darkBlueButton"
         size="sm"
       >
         {isPublished ? "Unpublish" : "Publish"}
       </Button>
       <ConfirmModal onConfirm={onDelete}>
-        <Button size="sm" disabled={isLoading}>
+        <Button size="sm" disabled={isLoading} className="bg-red-300">
           <Trash className="h-4 w-4" />
         </Button>
       </ConfirmModal>

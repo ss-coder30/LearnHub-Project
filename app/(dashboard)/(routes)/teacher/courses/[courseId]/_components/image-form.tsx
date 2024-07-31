@@ -57,8 +57,8 @@ export const ImageForm = ({ initialData, courseId }: ImageFormProps) => {
         Course image
         <Button
           onClick={toggleEdit}
-          variant="ghost"
-          className="border border-slate-400 hover:border-none bg-sky-100"
+          variant="darkBlueButton"
+          // className="border border-slate-500 hover:border-none bg-sky-100"
         >
           {isEditing && <>Cancel</>}
 

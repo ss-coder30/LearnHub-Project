@@ -83,14 +83,15 @@ const CreatePage = () => {
             />
             <div className="flex items-center gap-xbg-[#041422]-2">
               <Link href="/">
-                <Button type="button" variant="ghost">
+                <Button type="button" variant="ghost" className="bg-red-300 mr-3">
                   Cancel
                 </Button>
               </Link>
               <Button
                 type="submit"
                 disabled={!isValid || isSubmitting}
-                className="bg-[#041422] text-white"
+                // className="bg-[#041422] text-white"
+                variant={"darkBlueButton"}
               >
                 Continue
               </Button>

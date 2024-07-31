@@ -51,7 +51,7 @@ export const ChapterVideoForm = ({
     <div className="mt-6 border bg-slate-100 rounded-md p-4  dark:text-slate-800">
       <div className="font-medium flex items-center justify-between">
         Chapter video
-        <Button onClick={toggleEdit} variant="ghost">
+        <Button onClick={toggleEdit} variant="darkBlueButton" className="mb-3"> 
           {isEditing && <>Cancel</>}
           {!isEditing && !initialData.videoUrl && (
             <>

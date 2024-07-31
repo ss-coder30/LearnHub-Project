@@ -66,13 +66,13 @@ export const ChapterActions = ({
       <Button 
         onClick={onClick}
         disabled={isLoading}
-        variant="outline"
+        variant="darkBlueButton"
         size="sm"
       >
         {isPublished ? "Unpublish" : "Publish"}
       </Button>
       <ConfirmModal onConfirm={onDelete}>
-        <Button disabled={isLoading}>
+        <Button disabled={isLoading} className="bg-red-300">
           <Trash className="h-4 w-4" />
         </Button>
       </ConfirmModal> 

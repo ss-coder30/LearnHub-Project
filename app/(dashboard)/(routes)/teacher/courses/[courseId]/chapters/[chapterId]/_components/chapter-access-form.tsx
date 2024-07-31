@@ -75,8 +75,8 @@ export const ChapterAccessForm = ({
         Chapter Access
         <Button
           onClick={toggleEdit}
-          variant="ghost"
-          className="border border-slate-400 hover:border-none bg-sky-100"
+          variant="darkBlueButton"
+          // className="border border-slate-400 hover:border-none bg-sky-100"
         >
           {isEditing ? (
             <>Cancel</>
@@ -114,7 +114,7 @@ export const ChapterAccessForm = ({
               render={({ field }) => (
                 <FormItem className="flex flex-row items-start space-x-3">
                   <FormControl>
-                    <div className="mt-2">
+                    <div className="mt-2 hover: cursor-pointer">
                       <Checkbox
                         checked={field.value}
                         onCheckedChange={field.onChange}
@@ -131,7 +131,7 @@ export const ChapterAccessForm = ({
               )}
             />
             <div className="flex items-center gap-x-2">
-              <Button disabled={!isValid || isSubmitting} type="submit">
+              <Button disabled={!isValid || isSubmitting} type="submit" className="bg-green-300">
                 Save
               </Button>
             </div>

@@ -40,8 +40,8 @@ export const SidebarItem = ({
             <Icon 
                 size={22}
                 className={cn(
-                    "text-slate-500",
-                    isActive && "text-sky-700"
+                    "text-slate-600",
+                    isActive && "text-sky-800"
                 )}
             />
             {label}
